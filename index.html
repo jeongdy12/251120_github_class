@@ -8,40 +8,24 @@
   </head>
   <body>
     <div id="app">
-      <header>
-        <h1>안녕하세요! 제 이름은 [사용자 이름]입니다.</h1>
-        <p>저는 [간단한 자기소개]를 하고 있습니다.</p>
-        <nav>
-          <ul>
-            <li><a href="/about.html">자기소개 페이지</a></li>
-          </ul>
-        </nav>
+      <header style="background:linear-gradient(90deg,#ff6f61,#fbc2eb,#61dafb);color:white;padding:2rem 0 2.5rem 0;text-align:center;border-radius:0 0 32px 32px;box-shadow:0 4px 16px #8882;position:relative;">
+        <h1 style="font-size:2.8rem;letter-spacing:2px;">안녕하세요! 제 이름은 <span style="color:#fff700;">정다영</span>입니다.</h1>
       </header>
-      <main>
-        <section id="about">
-          <h2>자기소개</h2>
-          <p>여기에 자기소개 내용을 추가하세요.</p>
+      <main style="max-width:600px;margin:2rem auto;">
+        <section id="input-section" style="margin:2rem 0; padding:2rem; background:linear-gradient(90deg,#ffecd2,#fcb69f,#a1c4fd,#c2e9fb); border-radius:16px; box-shadow:0 4px 16px #8882;">
+          <h2 style="color:#ff6f61;">나의 자기소개 입력</h2>
+          <input type="text" id="intro-input" placeholder="자기소개를 입력하세요" style="width:70%;padding:0.7rem;border-radius:8px;border:1px solid #ccc;font-size:1.1rem;" />
+          <button id="intro-btn" style="margin-left:1rem;padding:0.7rem 1.2rem;background:#ff6f61;color:white;border:none;border-radius:8px;cursor:pointer;font-size:1.1rem;">저장</button>
+          <p id="intro-result" style="font-weight:bold;margin-top:1.5rem;font-size:1.2rem;"></p>
         </section>
-        <section id="experience">
-          <h2>경력</h2>
-          <ul>
-            <li>경력 1</li>
-            <li>경력 2</li>
-            <li>경력 3</li>
-          </ul>
-        </section>
-        <section id="input-section">
-          <h2>나의 자기소개 입력</h2>
-          <input type="text" id="intro-input" placeholder="자기소개를 입력하세요" />
-          <button id="intro-btn">저장</button>
-          <p id="intro-result"></p>
-          <h2>나를 표현하는 단어</h2>
-          <input type="text" id="keyword-input" placeholder="나를 표현하는 단어를 입력하세요" />
-          <button id="keyword-btn">이미지 보기</button>
-          <div id="image-result"></div>
+        <section id="mood-section" style="margin:2rem 0; padding:2rem; background:linear-gradient(90deg,#c2e9fb,#a1c4fd,#fcb69f,#ffecd2); border-radius:16px; box-shadow:0 4px 16px #8882;">
+          <h2 style="color:#61dafb;">오늘 하루의 기분</h2>
+          <input type="text" id="mood-input" placeholder="오늘의 기분을 입력하세요" style="width:70%;padding:0.7rem;border-radius:8px;border:1px solid #ccc;font-size:1.1rem;" />
+          <button id="mood-btn" style="margin-left:1rem;padding:0.7rem 1.2rem;background:#61dafb;color:white;border:none;border-radius:8px;cursor:pointer;font-size:1.1rem;">저장</button>
+          <p id="mood-result" style="font-weight:bold;margin-top:1.5rem;font-size:1.2rem;"></p>
         </section>
       </main>
-      <footer>
+      <footer style="text-align:center;padding:1rem;background:#333;color:white;border-radius:16px 16px 0 0;">
         <p>감사합니다!</p>
       </footer>
     </div>

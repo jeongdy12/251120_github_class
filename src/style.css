@@ -23,51 +23,86 @@ a:hover {
 }
 
 body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f6f8fb;
+  color: #222;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
-  color: #333;
   padding: 0;
 }
 
 header {
   text-align: center;
-  padding: 2rem;
-  background: #ff6f61;
-  color: white;
+  padding: 2rem 0 2.5rem 0;
+  background: #e3f0ff;
+  color: #222;
+  border-radius: 0 0 32px 32px;
+  box-shadow: 0 4px 16px #e3f0ff88;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   margin: 0;
+  letter-spacing: 2px;
 }
 
 main {
-  padding: 2rem;
+  max-width: 600px;
+  margin: 2rem auto;
 }
 
 section {
-  margin-bottom: 2rem;
-  padding: 1rem;
-  border-radius: 8px;
+  margin: 2rem 0;
+  padding: 2rem;
   background: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px #e3f0ff44;
 }
 
-#about {
-  border-left: 5px solid #ff6f61;
+#input-section h2,
+#mood-section h2 {
+  color: #3a8dde;
+  margin-bottom: 1rem;
 }
 
-#experience {
-  border-left: 5px solid #61dafb;
+input[type="text"] {
+  width: 70%;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #d0d7de;
+  font-size: 1.1rem;
+  background: #f6f8fb;
+  margin-bottom: 0.5rem;
+}
+
+button {
+  margin-left: 1rem;
+  padding: 0.7rem 1.2rem;
+  background: #3a8dde;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #256bb2;
+}
+
+p#intro-result,
+p#mood-result {
+  font-weight: bold;
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #e3f0ff;
+  color: #222;
+  border-radius: 16px 16px 0 0;
+  margin-top: 2rem;
 }
 
 #app {

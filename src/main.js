@@ -19,41 +19,46 @@ document.querySelector('#app').innerHTML = `
       <p id="intro-result"></p>
     </div>
     <div>
-      <input id="keyword-input" type="text" placeholder="키워드를 입력하세요." />
-      <button id="keyword-btn">이미지 검색</button>
-      <div id="image-result"></div>
+      <input id="mood-input" type="text" placeholder="오늘 하루의 기분은 어때요?" />
+      <button id="mood-btn">확인</button>
+      <p id="mood-result"></p>
     </div>
   </div>
 `
 import './style.css'
 
-// 자기소개 입력 및 표시
-const introBtn = document.getElementById('intro-btn');
-const introInput = document.getElementById('intro-input');
-const introResult = document.getElementById('intro-result');
-if (introBtn) {
-  introBtn.onclick = () => {
-    introResult.textContent = introInput.value ? introInput.value : '자기소개를 입력하세요.';
-  };
-}
+window.addEventListener('DOMContentLoaded', () => {
+  // 자기소개 입력 및 표시
+  const introBtn = document.getElementById('intro-btn');
+  const introInput = document.getElementById('intro-input');
+  const introResult = document.getElementById('intro-result');
+  if (introBtn) {
+    introBtn.onclick = () => {
+      introResult.textContent = introInput.value ? introInput.value : '자기소개를 입력하세요.';
+      // 저장 기능: localStorage에 저장
+      if (introInput.value) {
+        localStorage.setItem('daeyoung_intro', introInput.value);
+      }
+    };
+    // 페이지 로드 시 저장된 자기소개 불러오기
+    const saved = localStorage.getItem('daeyoung_intro');
+    if (saved) introResult.textContent = saved;
+  }
 
-// 키워드 입력 및 이미지 표시
-const keywordBtn = document.getElementById('keyword-btn');
-const keywordInput = document.getElementById('keyword-input');
-const imageResult = document.getElementById('image-result');
-if (keywordBtn) {
-  keywordBtn.onclick = async () => {
-    const keyword = keywordInput.value.trim();
-    if (!keyword) {
-      imageResult.innerHTML = '<p>단어를 입력하세요.</p>';
-      return;
-    }
-    imageResult.innerHTML = '<p>이미지를 불러오는 중...</p>';
-    try {
-      const res = await fetch(`https://source.unsplash.com/400x300/?${encodeURIComponent(keyword)}`);
-      imageResult.innerHTML = `<img src="${res.url}" alt="${keyword}" style="max-width:100%;border-radius:12px;box-shadow:0 2px 8px #888;" />`;
-    } catch (e) {
-      imageResult.innerHTML = '<p>이미지를 불러올 수 없습니다.</p>';
-    }
-  };
-}
+  // 오늘 하루의 기분 입력 및 표시
+  const moodBtn = document.getElementById('mood-btn');
+  const moodInput = document.getElementById('mood-input');
+  const moodResult = document.getElementById('mood-result');
+  if (moodBtn) {
+    moodBtn.onclick = () => {
+      moodResult.textContent = moodInput.value ? moodInput.value : '오늘의 기분을 입력하세요.';
+      // 저장 기능: localStorage에 저장
+      if (moodInput.value) {
+        localStorage.setItem('daeyoung_mood', moodInput.value);
+      }
+    };
+    // 페이지 로드 시 저장된 기분 불러오기
+    const savedMood = localStorage.getItem('daeyoung_mood');
+    if (savedMood) moodResult.textContent = savedMood;
+  }
+});
