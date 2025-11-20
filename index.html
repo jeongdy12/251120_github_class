@@ -8,24 +8,32 @@
   </head>
   <body>
     <div id="app">
-      <header style="background:linear-gradient(90deg,#ff6f61,#fbc2eb,#61dafb);color:white;padding:2rem 0 2.5rem 0;text-align:center;border-radius:0 0 32px 32px;box-shadow:0 4px 16px #8882;position:relative;">
+      <header style="background:linear-gradient(90deg,#b993d6,#8ca6db);color:white;padding:2rem 0 2.5rem 0;text-align:center;border-radius:0 0 32px 32px;box-shadow:0 4px 16px #b993d688;position:relative;">
         <h1 style="font-size:2.8rem;letter-spacing:2px;">안녕하세요! 제 이름은 <span style="color:#fff700;">정다영</span>입니다.</h1>
       </header>
       <main style="max-width:600px;margin:2rem auto;">
-        <section id="input-section" style="margin:2rem 0; padding:2rem; background:linear-gradient(90deg,#ffecd2,#fcb69f,#a1c4fd,#c2e9fb); border-radius:16px; box-shadow:0 4px 16px #8882;">
-          <h2 style="color:#ff6f61;">나의 자기소개 입력</h2>
-          <input type="text" id="intro-input" placeholder="자기소개를 입력하세요" style="width:70%;padding:0.7rem;border-radius:8px;border:1px solid #ccc;font-size:1.1rem;" />
-          <button id="intro-btn" style="margin-left:1rem;padding:0.7rem 1.2rem;background:#ff6f61;color:white;border:none;border-radius:8px;cursor:pointer;font-size:1.1rem;">저장</button>
-          <p id="intro-result" style="font-weight:bold;margin-top:1.5rem;font-size:1.2rem;"></p>
+        <section id="input-section" style="margin:2rem 0; padding:2rem; background:rgba(255,255,255,0.8); border-radius:16px; box-shadow:0 4px 16px #b993d644;">
+          <h2 style="color:#8e44ad;">나의 자기소개 입력</h2>
+          <input type="text" id="intro-input" placeholder="자기소개를 입력하세요" style="width:70%;padding:0.7rem;border-radius:8px;border:1px solid #b993d6;font-size:1.1rem;background:#f3e9ff;" />
+          <button id="intro-btn" style="margin-left:1rem;padding:0.7rem 1.2rem;background:#8e44ad;color:white;border:none;border-radius:8px;cursor:pointer;font-size:1.1rem;">저장</button>
+          <p id="intro-result" style="font-weight:bold;margin-top:1.5rem;font-size:1.2rem;color:#8e44ad;"></p>
         </section>
-        <section id="mood-section" style="margin:2rem 0; padding:2rem; background:linear-gradient(90deg,#c2e9fb,#a1c4fd,#fcb69f,#ffecd2); border-radius:16px; box-shadow:0 4px 16px #8882;">
-          <h2 style="color:#61dafb;">오늘 하루의 기분</h2>
-          <input type="text" id="mood-input" placeholder="오늘의 기분을 입력하세요" style="width:70%;padding:0.7rem;border-radius:8px;border:1px solid #ccc;font-size:1.1rem;" />
-          <button id="mood-btn" style="margin-left:1rem;padding:0.7rem 1.2rem;background:#61dafb;color:white;border:none;border-radius:8px;cursor:pointer;font-size:1.1rem;">저장</button>
-          <p id="mood-result" style="font-weight:bold;margin-top:1.5rem;font-size:1.2rem;"></p>
+        <section id="mood-section" style="margin:2rem 0; padding:2rem; background:rgba(255,255,255,0.8); border-radius:16px; box-shadow:0 4px 16px #b993d644;">
+          <h2 style="color:#8e44ad;">오늘 하루의 기분</h2>
+          <form id="mood-form" style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:center;">
+            <label><input type="radio" name="mood" value="좋음"> 좋음</label>
+            <label><input type="radio" name="mood" value="나쁨"> 나쁨</label>
+            <label><input type="radio" name="mood" value="행복함"> 행복함</label>
+            <label><input type="radio" name="mood" value="피곤함"> 피곤함</label>
+            <label><input type="radio" name="mood" value="설렘"> 설렘</label>
+            <label><input type="radio" name="mood" value="우울함"> 우울함</label>
+            <label><input type="radio" name="mood" value="평온함"> 평온함</label>
+          </form>
+          <button id="mood-btn" style="margin-top:1rem;padding:0.7rem 1.2rem;background:#8e44ad;color:white;border:none;border-radius:8px;cursor:pointer;font-size:1.1rem;">저장</button>
+          <p id="mood-result" style="font-weight:bold;margin-top:1.5rem;font-size:1.2rem;color:#8e44ad;"></p>
         </section>
       </main>
-      <footer style="text-align:center;padding:1rem;background:#333;color:white;border-radius:16px 16px 0 0;">
+      <footer style="text-align:center;padding:1rem;background:#b993d6;color:white;border-radius:16px 16px 0 0;">
         <p>감사합니다!</p>
       </footer>
     </div>

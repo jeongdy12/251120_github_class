@@ -24,7 +24,7 @@ a:hover {
 
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: #f6f8fb;
+  background: linear-gradient(135deg, #b993d6 0%, #8ca6db 100%);
   color: #222;
   margin: 0;
   padding: 0;
@@ -33,10 +33,10 @@ body {
 header {
   text-align: center;
   padding: 2rem 0 2.5rem 0;
-  background: #e3f0ff;
-  color: #222;
+  background: linear-gradient(90deg,#b993d6,#8ca6db);
+  color: white;
   border-radius: 0 0 32px 32px;
-  box-shadow: 0 4px 16px #e3f0ff88;
+  box-shadow: 0 4px 16px #b993d688;
 }
 
 h1 {
@@ -53,14 +53,14 @@ main {
 section {
   margin: 2rem 0;
   padding: 2rem;
-  background: #fff;
+  background: rgba(255,255,255,0.8);
   border-radius: 16px;
-  box-shadow: 0 4px 16px #e3f0ff44;
+  box-shadow: 0 4px 16px #b993d644;
 }
 
 #input-section h2,
 #mood-section h2 {
-  color: #3a8dde;
+  color: #8e44ad;
   margin-bottom: 1rem;
 }
 
@@ -68,16 +68,16 @@ input[type="text"] {
   width: 70%;
   padding: 0.7rem;
   border-radius: 8px;
-  border: 1px solid #d0d7de;
+  border: 1px solid #b993d6;
   font-size: 1.1rem;
-  background: #f6f8fb;
+  background: #f3e9ff;
   margin-bottom: 0.5rem;
 }
 
 button {
   margin-left: 1rem;
   padding: 0.7rem 1.2rem;
-  background: #3a8dde;
+  background: #8e44ad;
   color: white;
   border: none;
   border-radius: 8px;
@@ -86,7 +86,7 @@ button {
   transition: background 0.2s;
 }
 button:hover {
-  background: #256bb2;
+  background: #6c3483;
 }
 
 p#intro-result,
@@ -94,13 +94,32 @@ p#mood-result {
   font-weight: bold;
   margin-top: 1.5rem;
   font-size: 1.2rem;
+  color: #8e44ad;
+}
+
+#mood-form label {
+  background: #f3e9ff;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  margin: 0.2rem 0;
+  font-size: 1.05rem;
+  cursor: pointer;
+  border: 1px solid #b993d6;
+  transition: background 0.2s;
+}
+#mood-form label:hover {
+  background: #e3d0ff;
+}
+#mood-form input[type="radio"] {
+  accent-color: #8e44ad;
+  margin-right: 0.5rem;
 }
 
 footer {
   text-align: center;
   padding: 1rem;
-  background: #e3f0ff;
-  color: #222;
+  background: #b993d6;
+  color: white;
   border-radius: 16px 16px 0 0;
   margin-top: 2rem;
 }

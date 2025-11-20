@@ -19,7 +19,10 @@ document.querySelector('#app').innerHTML = `
       <p id="intro-result"></p>
     </div>
     <div>
-      <input id="mood-input" type="text" placeholder="오늘 하루의 기분은 어때요?" />
+      <span>오늘 하루의 기분은 어때요?</span>
+      <label><input type="radio" name="mood" value="좋아요" /> 좋아요</label>
+      <label><input type="radio" name="mood" value="그냥 그래요" /> 그냥 그래요</label>
+      <label><input type="radio" name="mood" value="별로예요" /> 별로예요</label>
       <button id="mood-btn">확인</button>
       <p id="mood-result"></p>
     </div>
@@ -45,20 +48,22 @@ window.addEventListener('DOMContentLoaded', () => {
     if (saved) introResult.textContent = saved;
   }
 
-  // 오늘 하루의 기분 입력 및 표시
+  // 오늘 하루의 기분 선택 및 표시
   const moodBtn = document.getElementById('mood-btn');
-  const moodInput = document.getElementById('mood-input');
   const moodResult = document.getElementById('mood-result');
   if (moodBtn) {
     moodBtn.onclick = () => {
-      moodResult.textContent = moodInput.value ? moodInput.value : '오늘의 기분을 입력하세요.';
-      // 저장 기능: localStorage에 저장
-      if (moodInput.value) {
-        localStorage.setItem('daeyoung_mood', moodInput.value);
+      const moodRadio = document.querySelector('input[name="mood"]:checked');
+      if (moodRadio) {
+        moodResult.textContent = `오늘의 기분: ${moodRadio.value}`;
+        // 저장 기능: localStorage에 저장
+        localStorage.setItem('daeyoung_mood', moodRadio.value);
+      } else {
+        moodResult.textContent = '오늘의 기분을 선택하세요.';
       }
     };
     // 페이지 로드 시 저장된 기분 불러오기
     const savedMood = localStorage.getItem('daeyoung_mood');
-    if (savedMood) moodResult.textContent = savedMood;
+    if (savedMood) moodResult.textContent = `오늘의 기분: ${savedMood}`;
   }
 });
