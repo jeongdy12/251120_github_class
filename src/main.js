@@ -26,6 +26,11 @@ document.querySelector('#app').innerHTML = `
       <button id="mood-btn">확인</button>
       <p id="mood-result"></p>
     </div>
+    <div>
+      <input id="name-input" type="text" placeholder="이름을 입력하세요." />
+      <button id="name-btn">확인</button>
+      <p id="name-result"></p>
+    </div>
   </div>
 `
 import './style.css'
@@ -65,5 +70,22 @@ window.addEventListener('DOMContentLoaded', () => {
     // 페이지 로드 시 저장된 기분 불러오기
     const savedMood = localStorage.getItem('daeyoung_mood');
     if (savedMood) moodResult.textContent = `오늘의 기분: ${savedMood}`;
+  }
+
+  // 이름 입력 및 표시
+  const nameBtn = document.getElementById('name-btn');
+  const nameInput = document.getElementById('name-input');
+  const nameResult = document.getElementById('name-result');
+  if (nameBtn) {
+    nameBtn.onclick = () => {
+      nameResult.textContent = nameInput.value ? `이름: ${nameInput.value}` : '이름을 입력하세요.';
+      // 저장 기능: localStorage에 저장
+      if (nameInput.value) {
+        localStorage.setItem('daeyoung_name', nameInput.value);
+      }
+    };
+    // 페이지 로드 시 저장된 이름 불러오기
+    const savedName = localStorage.getItem('daeyoung_name');
+    if (savedName) nameResult.textContent = `이름: ${savedName}`;
   }
 });
